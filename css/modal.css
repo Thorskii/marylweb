@@ -1,0 +1,110 @@
+.gallery1 {
+    position: relative;
+    min-height: 100vh;
+
+}
+
+.gallery1 .image-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.gallery1 .image-container .image {
+    height: 250px;
+    width: 350px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery1 .image-container .imageP {
+    height: 350px;
+    width: 250px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery1 .image-container .image img, .gallery1 .image-container .imageP img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.gallery1 .image-container .image:hover img,  .gallery1 .image-container .imageP img{
+    transform: scale(1.1);
+}
+
+.gallery1 .popup-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.gallery1 .popup-image span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+.gallery1 .popup-image img { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    border-radius: 5px;
+    width: 750px;
+}
+
+@media (max-width: 768px) {
+    .gallery1 .popup-image img { 
+        width: 95%;
+    }
+}
+
+/* PDF MODAL*/
+
+.gallery3 {
+    position: relative;
+
+}
+
+.gallery3 .pdf-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.gallery3 .pdf-container .pdf {
+    width: 50%;
+    height: 100%;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery3 .pdf-container .pdf embed{
+    object-fit: cover;
+    transition: .2s linear;
+}

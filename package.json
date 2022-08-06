@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "swup": "^2.0.16"
+  }
+}

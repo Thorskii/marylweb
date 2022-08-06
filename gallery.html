@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <head>
+            <meta charset="UTF-8"> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="js/script.js"></script>
+            <script>
+            window.onload = function() {
+                if(!localStorage.loaded) {
+                    localStorage.setItem('loaded', 'yes')
+                    window.location.reload();
+                }
+            } 
+
+            </script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="css/style.css"/>
+            <link rel="stylesheet" type="text/css" href="css/modal.css"/>
+            <title>Gallery</title>
+        </head>
+  
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarMain">
+            <a class="navbar-brand" href="/index.html">Mary Liang</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact</a>
+                  </li>
+              </ul>
+            </div>
+        </nav>
+        <main id="swup" class="transition-fade">
+            <div class="gallery1">
+                <div class="image-container">
+                    <div class="image"><img src="img/photography/img1.jpg"></div>
+                    <div class="image"><img src="img/photography/IMG_2168.JPG"></div>
+                    <div class="image"><img src="img/photography/IMG_8764.2.jpg"></div>
+                    <div class="image"><img src="img/photography/pink water.jpg"></div>
+                    <div class="image"><img src="img/photography/PSX_20180922_124632.jpg"></div>
+                    <div class="image"><img src="img/photography/PSX_20180923_193513.jpg"></div>
+                    <div class="image"><img src="img/photography/PSX_20181111_200326.jpg"></div>
+                    <div class="image"><img src="img/photography/IMG_1120.jpg"></div>
+                    <div class="image"><img src="img/photography/IMG_1234.jpg"></div>
+                    <div class="image"><img src="img/photography/IMG_1287.jpg"></div>
+                    <div class="image"><img src="img/photography/IMG_8189.jpg"></div>
+                    <div class="image"><img src="img/photography/lens photo.jpg"></div>
+                    <div class="image"><img src="img/photography/stairs.jpg"></div>
+                    <div class="image"><img src="img/photography/sunglasses.JPG"></div>
+                    
+                    <!-- <div class="imageP"><img src="img/photography/PSX_20180921_195134.jpg"></div> -->
+                </div>
+                
+                <div class="popup-image">
+                    <span>&times;</span>
+                    <img src="img/photography/img1.jpg">
+                </div>
+            </div>
+
+        </main>
+        <script src="/node_modules/swup/dist/swup.js"></script>
+        <script>
+            const swup = new Swup();
+            document.querySelectorAll('.image-container img').forEach(image =>{
+                image.onclick = () => { 
+                    document.querySelector('.popup-image').style.display = 'block'; 
+                    document.querySelector('#navbarMain').style.display = 'none'; 
+                    document.querySelector('.popup-image img').src = image.getAttribute('src');
+                }
+            });
+
+            document.querySelector('.popup-image span').onclick = () => {
+                document.querySelector('.popup-image').style.display = 'none';
+                document.querySelector('#navbarMain').style.display = 'flex';  
+            }
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
+</html>
